@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Outfit:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- VARIABLES --- */
+:root {
+    --primary-blue: #133A5E;
+    --accent-blue: #133A5E;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --font-heading: 'Jockey One', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+/* --- GLOBAL SETTINGS --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    overflow-x: hidden; 
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* --- INTERACTIVE BACKGROUND (LAYER -1) --- */
+#interactive-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Clicks pass through the graph */
+    z-index: -1;          /* Sits behind content, but in front of background colors */
+}
+
+/* --- HEADER / NAV (LAYER 100) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute; 
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    /* Frosted/White Background */
+    background-color: rgba(255, 255, 255, 0.95);
+    /* The Light Gray Line */
+    border-bottom: 1px solid #e7e7e7; 
+    
+}
+.logo {
+    height: 50px; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* STANDARD LINKS */
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+/* HOVER EFFECT */
+nav a:hover {
+    color: #729BC2;
+}
+
+/* ACTIVE STATE (Underline) */
+/* You must add class="active" to the link in HTML */
+nav a.active {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 5px;
+}
+
+/* JOIN US BUTTON */
+.btn-join {
+    display: inline-block; 
+    
+    background-color: var(--primary-blue);
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    
+    border-bottom: none !important; 
+}
+
+.btn-join:hover {
+    background-color: var(--accent-blue); 
+    color: white !important;
+    transform: scale(1.05); 
+}
+
+.hero {
+    background-color: transparent; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 50px; 
+    position: relative;
+    z-index: 1; 
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-image {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 7rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.sub-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.mission-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #9E9E9E;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-hero {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px; /* Pill shape */
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.btn-hero:hover {
+    transform: scale(1.05); 
+}
+/* --- ABOUT SECTION --- */
+.about {
+    position: relative;
+    color: var(--text-light);
+    padding: 80px 5%;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-blue); 
+    z-index: -2; 
+}
+
+.about-content {
+    position: relative;
+    z-index: 2; 
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; 
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 400; 
+}
+
+.about-description {
+    font-size: 1.5rem;
+    max-width: 100%; 
+    line-height: 1.6;
+    margin: 0 0 50px 0;
+    font-weight: 400;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white; 
+    color: var(--text-dark);
+    border-radius: 10px;
+    min-height: 300px;
+    text-align: left;
+    padding: 0; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text {
+    padding: 30px;
+}
+
+.card h3 {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #729BC2; 
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: white; 
+    color: var(--primary-blue);
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #eee;
+}
+
+.footer-logo {
+    height: 60px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right h4 {
+    margin-bottom: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: auto;
+}
+
+.social-icons a {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent-blue);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.95); /* Add background on mobile so menu is readable */
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-title {
+        font-size: 3.5rem;
+    }
+    
+    .sub-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-image {
+        width: 250px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-right {
+        text-align: center;
+    }
+}
+
+/* --- OFFICERS PAGE --- */
+
+.officers-page {
+    padding: 150px 5% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Subtitle styling */
+.section-subtitle {
+    font-size: 1.5rem;
+    color: #9E9E9E;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    max-width: 100%; 
+}
+
+.role-text {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.officer-card .card-image {
+    height: 300px;
+    object-position: top;
+}
+
+.officer-social {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: #0077b5;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.officer-social:hover {
+    color: #004182;
+    transform: translateY(-3px);
+}
+
+.officer-social img {
+    width: 30px;
+    height: auto;
+}
+
+/* --- EVENTS PAGE --- */
+.events-page {
+    padding: 150px 5% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.card-image-wrapper {
+    position: relative;
+}
+
+.date-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: white;
+    color: var(--primary-blue);
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-heading);
+}
+
+.date-badge .month {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.date-badge .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.event-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.event-meta i {
+    color: #64C8FF;
+    margin-right: 5px;
+}
+
+.btn-event {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-event:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.card.past-event {
+    opacity: 0.7;
+    background-color: #f9f9f9;
+}
+
+.card.past-event .card-image {
+    filter: grayscale(100%);
+}
+
+.card.past-event .date-badge {
+    background-color: #e0e0e0;
+    color: #888;
+    box-shadow: none;
+}
+
+.card.past-event .btn-event {
+    border-color: #ccc;
+    color: #999;
+    pointer-events: none;
+    cursor: default;
+}
+
+.card.past-event .btn-event:hover {
+    background-color: transparent;
+    color: #999;
+}
+
+/* upcoming events on home page */
+
+.upcoming-events {
+    margin-top: 10px;
+    color:#888;
+    text-decoration: underline;
+    transition: all 0.2s;
+}
+
+.upcoming-events:hover {
+    color:#729BC2;
+}

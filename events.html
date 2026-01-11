@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | DSUA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <canvas id="interactive-background"></canvas>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="assets/dsua-logo.png" alt="DSUA Logo" class="logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="officers.html">Officers</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <!-- <li><a href="index.html#resources">Resources</a></li> -->
+                <li><a href="https://forms.gle/VR4KNzxbtCMYWieFA" class="btn-join">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section class="events-page">
+        <h1 class="main-title">Upcoming Events</h1>
+        <p class="section-subtitle">Join us for workshops, socials, and tech talks.</p>
+        
+        <div class="cards-container">
+            
+            <div class="card event-card">
+                <div class="card-image-wrapper">
+                    <div class="date-badge">
+                        <span class="month">JAN</span>
+                        <span class="day">23</span>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <div class="event-meta">
+                        <span><i class="far fa-clock"></i> 8:00 PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i>Hearst Field Annex A1</span>
+                    </div>
+                    <h3>Data Bytes</h3>
+                    <p>Hear about different data science organizations at UC Berkeley and meet the members.</p>
+                    <!-- <a href="#" class="btn-event">RSVP Here</a> -->
+                </div>
+            </div>
+
+            <div class="card event-card past-event">
+                <div class="card-image-wrapper">
+                    <div class="date-badge">
+                        <span class="month">OCT</span>
+                        <span class="day">01</span>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <div class="event-meta">
+                        <span><i class="far fa-clock"></i> 6:00 - 7:00 PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i>Etcheverry Hall 3106</span>
+                    </div>
+                    <h3>First General Meeting</h3>
+                    <p>Come by to enjoy games, food, and the chance to connect with fellow students interested in data science. We’ll also be sharing more about the events we have planned for the rest of the semester.</p>
+                    <a href="#" class="btn-event">Event Ended</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+            <img src="assets/dsua-logo-footer.png" alt="DSUA Logo" class="footer-logo">
+        </div>
+        <div class="footer-right">
+            <h4>Data Science Undergraduate Association</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-slack"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
